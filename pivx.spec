@@ -33,8 +33,6 @@ BuildRequires:  protobuf-devel
 BuildRequires:  qrencode-devel
 BuildRequires:  qt5-linguist
 BuildRequires:  qt5-qtbase-devel
-#BuildRequires:  selinux-policy-devel
-#BuildRequires:  selinux-policy-doc
 BuildRequires:  systemd
 
 # There's one last Python 2 script left in the test suite, so we still need
@@ -77,12 +75,15 @@ issuing of PIVs is carried out collectively by the network.
 
 %package common
 Summary:    PIVX common files
+BuildArch:  noarch
 
 %description common
 PIVX is an experimental new digital currency that enables instant payments to
 anyone, anywhere in the world. PIVX uses peer-to-peer technology to operate with
 no central authority: managing transactions and issuing money are carried out
 collectively by the network.
+
+This package contains common files.
 
 %package gui
 Summary:    PIVX graphical client
