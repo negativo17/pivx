@@ -1,0 +1,20 @@
+[Unit]
+Description=PIVX daemon
+After=syslog.target network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/pivxd -daemon -conf=${CONFIG_FILE} -datadir=${DATA_DIR} -pid=${PID_FILE} $OPTIONS
+EnvironmentFile=/etc/sysconfig/pivx
+User=pivx
+Group=pivx
+
+Restart=on-failure
+PrivateTmp=true
+TimeoutStopSec=120
+TimeoutStartSec=60
+StartLimitInterval=240
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

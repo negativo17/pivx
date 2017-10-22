@@ -1,0 +1,10 @@
+# Provide options to the pivx daemon here, for example
+# OPTIONS="-testnet -disable-wallet"
+
+OPTIONS=""
+
+# System service defaults.
+# Don't change these unless you know what you're doing.
+CONFIG_FILE="/etc/pivx/pivx.conf"
+DATA_DIR="/var/lib/pivx"
+PID_FILE="/run/pivxd/pivxd.pid"

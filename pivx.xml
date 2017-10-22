@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>PIVX</short>
+  <description>The default ports used by PIVX (node, RPC port, Masternode). Enable this option if you plan to be a full PIVX node.</description>
+  <port protocol="tcp" port="51470-51472"/>
+</service>
