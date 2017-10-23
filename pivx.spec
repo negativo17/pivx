@@ -35,25 +35,22 @@ BuildRequires:  qt5-linguist
 BuildRequires:  qt5-qtbase-devel
 BuildRequires:  systemd
 
+%if 0%{?fedora} >= 26
+BuildRequires:  compat-openssl10-devel
+%else
+BuildRequires:  openssl-devel
+%endif
+
 # There's one last Python 2 script left in the test suite, so we still need
 # both Python 2 and 3 to run all tests.
 %if 0%{?fedora}
-BuildRequires:  compat-openssl10-devel
 BuildRequires:  python2
 BuildRequires:  python3-zmq
 BuildRequires:  zeromq-devel
 %endif
 %if 0%{?rhel}
-BuildRequires:  openssl-devel
 BuildRequires:  python
 BuildRequires:  python34
-%endif
-
-# ZeroMQ not testable yet on RHEL due to lack of python3-zmq so
-# enable only for Fedora
-%if 0%{?fedora}
-BuildRequires:  python3-zmq
-BuildRequires:  zeromq-devel
 %endif
 
 # Required for the firewall rules
