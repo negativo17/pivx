@@ -7,7 +7,7 @@
 
 Name:       pivx
 Version:    3.0.4
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    Peer to Peer Cryptographic Currency
 License:    MIT
 URL:        https://pivx.org/
@@ -126,6 +126,9 @@ package.
 
 %prep
 %setup -q -n PIVX-%{version}
+
+# Generate build info (see src/clientversion.cpp and share/genbuild.sh)
+echo "#define BUILD_SUFFIX Fedora" > src/build.h
 
 %build
 ./autogen.sh
@@ -268,6 +271,9 @@ exit 0
 %{_unitdir}/%{name}.service
 
 %changelog
+* Sun Oct 29 2017 Simone Caronni <negativo17@gmail.com> - 3.0.4-3
+- Generate build information.
+
 * Sun Oct 29 2017 Simone Caronni <negativo17@gmail.com> - 3.0.4-2
 - Rebuild for 3.0.4 re-release.
 
