@@ -7,7 +7,7 @@
 
 Name:       pivx
 Version:    3.0.4
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Peer to Peer Cryptographic Currency
 License:    MIT
 URL:        https://pivx.org/
@@ -268,5 +268,8 @@ exit 0
 %{_unitdir}/%{name}.service
 
 %changelog
+* Sun Oct 29 2017 Simone Caronni <negativo17@gmail.com> - 3.0.4-2
+- Rebuild for 3.0.4 re-release.
+
 * Sun Oct 22 2017 Simone Caronni <negativo17@gmail.com> - 3.0.4-1
 - First build.
